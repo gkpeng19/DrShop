@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5C5ADF0-F3CF-46E8-BCE1-69986ABF33E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DrShop.Ext</RootNamespace>
+    <AssemblyName>DrShop.Ext</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ajax">
+      <HintPath>D:\Publish\DrShop\bin\Ajax.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNetPager">
+      <HintPath>D:\Publish\DrShop\bin\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common">
+      <HintPath>D:\Publish\DrShop\bin\IBatisNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper">
+      <HintPath>D:\Publish\DrShop\bin\IBatisNet.DataMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Intelligencia.UrlRewriter">
+      <HintPath>D:\Publish\DrShop\bin\Intelligencia.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJSON">
+      <HintPath>D:\Publish\DrShop\bin\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Accounts">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Accounts.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.API">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.BLL">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Common">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Components">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Controls">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.DALFactory">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.DALFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.DBUtility">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.DBUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Email">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.IDAL">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Json">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Json.RPC">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Json.RPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Map">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Map.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Model">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.MySqlDAL">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.MySqlDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.OAuth">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Payment">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Payment.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.ShoppingCart">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.ShoppingCart.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.SQLServerDAL">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.SQLServerDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.TaoBao">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.TaoBao.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.TimerTask">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.TimerTask.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.ViewEngine">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.ViewEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.ViewModel">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.ViewModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Web">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.Web.Validator">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.Web.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.WeChat">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.WeChat.dll</HintPath>
+    </Reference>
+    <Reference Include="Maticsoft.ZipLib">
+      <HintPath>D:\Publish\DrShop\bin\Maticsoft.ZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>D:\Publish\DrShop\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>D:\Publish\DrShop\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>D:\Publish\DrShop\bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Publish\DrShop\bin\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcPager">
+      <HintPath>D:\Publish\DrShop\bin\MvcPager.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>D:\Publish\DrShop\bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:\Publish\DrShop\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>D:\Publish\DrShop\bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebugger">
+      <HintPath>D:\Publish\DrShop\bin\RouteDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Publish\DrShop\bin\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Publish\DrShop\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Publish\DrShop\bin\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Publish\DrShop\bin\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Publish\DrShop\bin\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Publish\DrShop\bin\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing">
+      <HintPath>D:\Publish\DrShop\bin\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExAccountController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

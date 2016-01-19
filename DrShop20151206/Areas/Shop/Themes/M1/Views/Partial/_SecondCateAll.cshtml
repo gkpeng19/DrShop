@@ -1,0 +1,15 @@
+﻿@model List<Maticsoft.Model.Shop.Products.CategoryInfo>
+ @if (Model != null && Model.Count > 0)
+ {
+     <div class="prdsort-item">
+         <ul>
+             @foreach (var item in Model)
+             {
+                    <li><a href="/product/@item.CategoryId"
+                    target="_blank">@item.Name</a></li>
+             }
+          
+         </ul>
+                </div>
+ }
+

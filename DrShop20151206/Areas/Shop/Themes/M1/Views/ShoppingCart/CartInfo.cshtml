@@ -1,0 +1,95 @@
+﻿@{
+    Layout = "~/Areas/Shop/Themes/M1/Views/Shared/_ShoppingLayout.cshtml";
+}
+@section step{
+    <ul class="step" id="step1">
+        <li class="fore1">1.我的购物车<b></b></li>
+        <li class="fore2">2.填写核对订单信息<b></b></li>
+        <li class="fore3">3.成功提交订单</li>
+    </ul>
+}
+<script type="text/javascript">
+    $(function () {
+
+        $(".jiaoshao").die("click").live("click", function () {
+            var count = parseInt($(this).next().val());
+            if (count == 1) {
+                if (confirm("您确定要删除该商品吗？")) {
+                    $(this).parents('.gouwuchelist').find('.btnDelete').click();
+                }
+            } else {
+                $(this).next().val(count - 1);
+                var itemId = $(this).parent().attr("ItemId");
+                $.ajax({
+                    type: "POST",
+                    dataType: "text",
+                    async : false,
+                    url: "@(ViewBag.BasePath)ShoppingCart/UpdateItemCount?s=" + new Date().format('yyyyMMddhhmmssS'),
+                    data: { ItemId: itemId, Count: count - 1 },
+                    success: function (data) {
+                        if (data != "No") {
+                            $("#LoadCartList").load("@(ViewBag.BasePath)ShoppingCart/CartList?s=" + new Date().format('yyyyMMddhhmmssS'));
+                        } else {
+                            ShowFailTip("服务器繁忙，请稍候再试！");
+                        }
+                    }
+                });
+            }
+        });
+        $('.txtQuantity').die("blur").live("blur", function () {
+            var count = parseInt($(this).val());
+            if (count < 1) {
+                if (confirm("您确定要删除该商品吗？")) {
+                    $(this).parents('.gouwuchelist').find('.btnDelete').click();
+                    return;
+                } 
+                $(this).val(1);
+                return;
+            }
+            var itemId = $(this).parent().attr("ItemId");
+            $.ajax({
+                type: "POST",
+                dataType: "text",
+                url: "@(ViewBag.BasePath)ShoppingCart/UpdateItemCount?s=" + new Date().format('yyyyMMddhhmmssS'),
+                data: { ItemId: itemId, Count: count },
+                success: function (data) {
+                    if (data != "No") {
+                        $("#LoadCartList").load("@(ViewBag.BasePath)ShoppingCart/CartList?s=" + new Date().format('yyyyMMddhhmmssS'));
+                    } else {
+                        ShowFailTip("服务器繁忙，请稍候再试！");
+                    }
+                }
+            });
+        });
+        $(".zhengjia").die("click").live("click", function () {
+            var count = parseInt($(this).prev().val());
+            $(this).prev().val(count + 1);
+            var itemId = $(this).parent().attr("ItemId");
+            $.ajax({
+                type: "POST",
+                dataType: "text",
+                async : false,
+                url: "@(ViewBag.BasePath)ShoppingCart/UpdateItemCount?s=" + new Date().format('yyyyMMddhhmmssS'),
+                data: { ItemId: itemId, Count: count + 1 },
+                success: function (data) {
+                    if (data != "No") {
+                        $("#LoadCartList").load("@(ViewBag.BasePath)ShoppingCart/CartList?s=" + new Date().format('yyyyMMddhhmmssS'));
+                    } else {
+                        ShowFailTip("服务器繁忙，请稍候再试！");
+                    }
+                }
+            });
+        });
+
+    })
+</script>
+<div class="con_part_2">
+    <div class="wrap_960">
+        <div id="LoadCartList">
+            @Html.Action("CartList", "ShoppingCart")
+        </div>
+        @*@Html.Action("ProductRan", "Product", new { ViewName = "_ProductCartRec", Top = 5 })*@
+        <div class="hengxian">
+        </div>
+    </div>
+</div>

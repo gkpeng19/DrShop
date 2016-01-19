@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "/Areas/MShop/Themes/M1/Views/Shared/_BaseLayout.cshtml";
+    ViewBag.Title = "注册";
+    string regStr = ViewBag.RegisterToggle;
+}
+@model Maticsoft.ViewModel.Shop.RegisterModel
+<link href="/Areas/MShop/Themes/M1/Content/Css/UserCenter/userstyle.css" rel="stylesheet"
+    type="text/css" />
+<script src="/Areas/MShop/Themes/M1/Content/Scripts/UserCenter/EmailRegister.js"
+    type="text/javascript"></script>
+<div class="top">
+    <span>新用户注册</span>
+    <div class="header-btn fr">
+        <a href="@ViewBag.BasePath" style="margin: 8px 2px 8px 0; padding-top: 8px; height: 22px">
+            <img src="/Areas/MShop/Themes/M1/Content/images/home.png" width="20" height="18">
+        </a>
+    </div>
+</div>
+   <input id="hfSMSIsOpen" type="hidden" value="@ViewBag.SMSIsOpen" /> 
+<div class="yy">
+    <span id="diverror" style="margin-left: 10px; margin-top: 10px;" class="txterror">
+    </span>
+</div>
+<div class="logincontent">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "formregister" }))
+    { 
+           <input type="hidden" id="hfPhoneNumber"/>
+        
+        <input id="hfRegisterToggle" type="hidden" value="@regStr" /> 
+        <span class="tipClass">&nbsp; </span>
+        switch (regStr)
+        {
+            case "Email":
+                                <div>
+            @Html.TextBoxFor(m => m.UserName, new { id = "email", Class = "logininput", placeholder = "请输入邮箱" })
+            <br />
+            <div id="divEmailTip" class="txterror tipClass">
+                <span class="txterror">&nbsp; @Html.ValidationMessageFor(m => m.UserName)</span>
+            </div>
+         </div>
+                                         break;
+            case "Phone":
+                            <div >
+            @Html.TextBoxFor(m => m.UserName, new { id = "phone", Class = "logininput", placeholder = "请输入手机号码" })
+            @if (ViewBag.SMSIsOpen)
+            {
+               <li class="ui-list-item" class="txtphone" style="padding-top: 8px; list-style-type: none">
+                                    <span id="J-resend-mobile" class="ui-button ui-button-swhite" data-widget-cid="widget-0">
+                                              <input id="btnSendSMS" type="button" value="发送校验码短信" style="height: 28px; width: 150px;" />
+                                          </span>
+                                </li>
+            }
+                             
+            <div id="divPhoneTip" class="txterror tipClass">
+                <span class="txterror">&nbsp; @Html.ValidationMessageFor(m => m.UserName)  @ViewBag.hasemail</span>
+            </div>
+        </div>
+                                                                                      if (ViewBag.SMSIsOpen)
+                                                                                      {
+                       <div class="txtphone">
+                           <input type="text" name="xlInput" maxlength="6" id="checkCode" class="logininput" placeholder="请输入效验码" />
+                           <div id="divVerifyCodeTip" class="txterror tipClass">
+                           </div>
+                       </div>
+                                                                                      }
+
+                                                                                      break;
+            default:
+                   <div>
+            @Html.TextBoxFor(m => m.UserName, new { id = "email", Class = "logininput", placeholder = "请输入邮箱" })
+            <br />
+            <div id="divEmailTip" class="txterror tipClass">
+                <span class="txterror">&nbsp; @Html.ValidationMessageFor(m => m.UserName)  @ViewBag.hasemail</span>
+            </div>
+         </div>
+                                                                                      break;
+        } 
+        
+        <div>
+            @Html.TextBoxFor(m => m.NickName, new { id = "nickname", Class = "logininput", placeholder = "请输入昵称" })
+            <br />
+            <div id="divNicknameTip" class="txterror tipClass">
+                <span class="txterror">&nbsp; @Html.ValidationMessageFor(m => m.NickName) @ViewBag.hasnickname</span>
+            </div>
+        </div>
+        
+        
+        <div>
+            @Html.PasswordFor(m => m.Password, new { id = "pwd", Class = "logininput", placeholder = "请输入密码" })
+            <br />
+            <div id="divPwdTip" class="txterror tipClass">
+                <span class="txterror">&nbsp; @Html.ValidationMessageFor(m => m.Password)</span>
+            </div>
+        </div>
+         
+        <div>@Html.PasswordFor(m => m.ConfirmPassword, new { Class = "logininput", id = "vpwd", placeholder = "确认密码" })
+            <br />
+            <div id="divVPwdTip" class="txterror tipClass">
+                <span class="txterror">&nbsp; @Html.ValidationMessageFor(m => m.ConfirmPassword)</span>
+            </div>
+        </div>
+        
+     
+        <div>
+            <input type="checkbox" id="chkAgreement">同意<a href="@(ViewBag.BasePath)Account/UserAgreement" target="_blank">注册协议</a></div>
+        <div id="divAgreementTip" class="txterror tipClass">
+        </div>
+        <input type="submit" id="registerSubmit" value="" style="display: none;" />
+        <div>
+            <input type="button" value="注册" id="btnEmailRegister" class="sub_btn"/></div>
+ 
+    }
+</div>
