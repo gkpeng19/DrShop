@@ -13,7 +13,7 @@
         <div class="user_titlebottom"> 可用余额：<span> ￥@(ViewBag.Balance.ToString("F"))</span> <div id="balanceDraw" style="display:none;">&nbsp;&nbsp;提现金额：<span><label id="labbalanceDraw">@ViewBag.BalanceDraw.ToString("F")</label></span> </div> &nbsp;&nbsp;账户状态：<span>@ViewBag.Activity</span> 
             <div  class="fr">
                 <a href="@(ViewBag.BasePath)UserCenter/Recharge" class="usercenterbtn">&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <a href="@(ViewBag.BasePath)UserCenter/Draw" class="withdraw">申请提现</a>
+                <a href="@(ViewBag.BasePath)UserCenter/Draw" class="withdraw" style="display:none;">申请提现</a>
             </div>
         </div> 
         <div id="divdetaillist">
